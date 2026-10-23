@@ -24,6 +24,10 @@ test('crea un índice TypeScript independiente y lo consulta extremo a extremo',
     const first = spawnSync(process.execPath, args, { encoding: 'utf8' });
     assert.equal(first.status, 0, first.stderr);
     assert.deepEqual(JSON.parse(first.stdout), { files: 2, symbols: 2, importEdges: 1, resolvedCalls: 1, unresolvedCalls: 0 });
+    const migrated = new DatabaseSync(dbPath, { readOnly: true });
+    try {
+      assert.equal(migrated.prepare('SELECT count(*) AS n FROM schema_migrations').get().n, 3);
+    } finally { migrated.close(); }
 
     const store = new SqliteImpactStore(dbPath);
     try {

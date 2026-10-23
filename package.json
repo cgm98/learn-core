@@ -9,6 +9,9 @@
   "engines": { "node": ">=24" },
   "scripts": {
     "test": "node --test test/*.test.mjs",
+    "start": "node src/server.mjs",
+    "db:init": "node src/db-cli.mjs",
+    "db:migrate": "node src/db-cli.mjs --migrate-existing",
     "impact": "node src/impact-cli.mjs",
     "bootstrap:ts": "node src/typescript-bootstrap-cli.mjs",
     "semantic:index": "node src/semantic-index-cli.mjs",

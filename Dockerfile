@@ -26,5 +26,5 @@ VOLUME ["/app/db"]
 ENV NODE_ENV=production \
     LEARN_CODE_DB_PATH=/app/db/learn_code.db
 
-# Ejecución por defecto
-CMD ["npm", "test"]
+# Arranca el servicio; crea el esquema cuando la base no existe.
+CMD ["npm", "start"]
