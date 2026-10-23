@@ -1,0 +1,14 @@
+services:
+  learn-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learn-core
+    environment:
+      - NODE_ENV=production
+      - LEARN_CODE_DB_PATH=/app/db/learn_code.db
+    volumes:
+      - ./db:/app/db
+      - ./migrations:/app/migrations:ro
+    # Por defecto ejecuta las pruebas del sistema
+    command: ["npm", "test"]

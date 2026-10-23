@@ -1,0 +1,23 @@
+{
+  "name": "@learn/learn-core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LEARN-CORE Code Topology, AST & Agent Intelligence Engine",
+  "license": "MIT",
+  "type": "module",
+  "main": "backend/src/db.ts",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "impact": "node src/impact-cli.mjs",
+    "bootstrap:ts": "node src/typescript-bootstrap-cli.mjs",
+    "semantic:index": "node src/semantic-index-cli.mjs",
+    "semantic:audit": "node src/semantic-audit-cli.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "drizzle-orm": "^0.45.2",
+    "sqlite-vec": "^0.1.9",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@learn/learn-core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LEARN-CORE Code Topology, AST & Agent Intelligence Engine",
+  "main": "backend/src/db.ts",
+  "scripts": {
+    "test": "echo \"Learn-Core tests pending\""
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "drizzle-orm": "^0.45.2",
+    "sqlite-vec": "^0.1.9"
+  }
+}
